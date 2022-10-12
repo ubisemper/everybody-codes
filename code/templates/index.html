@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <title>Infi | Security cameras Utrecht</title>
   <!-- Video camera Icon by Martz90 available at http://www.iconarchive.com/show/circle-icons-by-martz90/video-camera-icon.html under a Creative Commons Attribution-Noncommercial-No Derivate 4.0. Full terms at http://creativecommons.org/licenses/by-nc-nd/4.0 -->
-  <link rel="icon" type="image/x-icon" href="video-camera-icon.png">
+  <link rel="icon" type="image/x-icon" href="../static/video-camera-icon.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <style type="text/css">
     html, body {
@@ -52,7 +52,7 @@
     h1 {
       padding: 20px 0 20px 55px;
       margin: 0 0 0 20px;
-      background: url("video-camera-icon.png") no-repeat;
+      background: url("../static/video-camera-icon.png") no-repeat;
       background-size: 40px;
       background-position: 0 50%;
     }
@@ -123,13 +123,19 @@
                   <th colspan="4">Cameras 3</th>
                 </tr>
                 <tr>
-                  <th>Number</th>
-                  <th>Name</th>
-                  <th>Latitude</th>
-                  <th>Longitude</th>
+                  {% for header in headings %}
+                  <th>{{ header }}</th>
+                  {% endfor %}
                 </tr>
               </thead>
               <tbody>
+                {% for row  in data1%}
+                <tr>
+                  {% for cell in row%}
+                    <td>{{cell}}</td>
+                  {%endfor%}
+                </tr>
+                {%endfor%}
               </tbody>
             </table>
           </td>
@@ -140,13 +146,19 @@
                   <th colspan="4">Cameras 5</th>
                 </tr>
                 <tr>
-                  <th>Number</th>
-                  <th>Name</th>
-                  <th>Latitude</th>
-                  <th>Longitude</th>
+                  {% for header in headings %}
+                  <th>{{ header }}</th>
+                  {% endfor %}
                 </tr>
               </thead>
               <tbody>
+                {% for row  in data2%}
+                <tr>
+                  {% for cell in row%}
+                    <td>{{cell}}</td>
+                  {%endfor%}
+                </tr>
+                {%endfor%}
               </tbody>
             </table>
           </td>
@@ -157,13 +169,19 @@
                   <th colspan="4">Cameras 3 &amp; 5</th>
                 </tr>
                 <tr>
-                  <th>Number</th>
-                  <th>Name</th>
-                  <th>Latitude</th>
-                  <th>Longitude</th>
+                  {% for header in headings %}
+                  <th>{{ header }}</th>
+                  {% endfor %}
                 </tr>
               </thead>
               <tbody>
+                {% for row  in data3%}
+                <tr>
+                  {% for cell in row%}
+                    <td>{{cell}}</td>
+                  {%endfor%}
+                </tr>
+                {%endfor%}
               </tbody>
             </table>
           </td>
@@ -174,19 +192,28 @@
                   <th colspan="4">Cameras Overig</th>
                 </tr>
                 <tr>
-                  <th>Number</th>
-                  <th>Name</th>
-                  <th>Latitude</th>
-                  <th>Longitude</th>
+                  {% for header in headings %}
+                  <th>{{ header }}</th>
+                  {% endfor %}
                 </tr>
               </thead>
               <tbody>
+                {% for row  in data4%}
+                <tr>
+                  {% for cell in row%}
+                    <td>{{cell}}</td>
+                  {%endfor%}
+                </tr>
+                {%endfor%}
               </tbody>
             </table>
           </td>
         </tr>
       </tbody>
     </table>
+    
+
+
   </main>
 </body>
 
