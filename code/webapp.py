@@ -35,7 +35,6 @@ def map_view():
     data = response_API.text
     
     _,_,_,_, lat, long = process_data(data)
-    # print(type(lat)
     long = long.astype(dtype='float32')
     lat = lat.astype(dtype='float32')
     long = long.tolist()
@@ -52,8 +51,6 @@ def index():
     data = response_API.text
     box1, box2, box3, box4, _, _ = process_data(data)
     
-    # print(box4.columns)
-    
     headings = box4.columns
     data1 = box1.to_records(index=False)
     data2 = box2.to_records(index=False)
@@ -64,4 +61,4 @@ def index():
                            data2=data2, data3=data3, data4=data4)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5002, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

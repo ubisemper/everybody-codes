@@ -17,7 +17,6 @@ def search_data(name, path):
     
     data["ID"] = data["name"].str.extract('(\d+)')
     
-    # Waarom hier voor gegaan? Langere tekens of
     data["GeoIdent"] = data["name"].str.extract('(?:(.+[A-Z]{3}|.*[0-9]{3}))')
     data["name"] = data["name"].str.split('(?:(.+[A-Z]{3}|.*[0-9]{3}))', expand=True)[2]
     
@@ -28,8 +27,6 @@ def search_data(name, path):
         return data
     
     return data[data["name"].str.contains(name, case=False)]
-
-
 
 
 if __name__ == "__main__":

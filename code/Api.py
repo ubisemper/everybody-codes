@@ -12,7 +12,6 @@ app = Flask(__name__)
 
 def get_cam_data(name=name, path=path):
     
-    # data = search_data(name, path)
     try:
         data = search_data(name, path)
     except:
